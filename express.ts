@@ -1,9 +1,9 @@
-declare function require(name: string);
 var express = require('express')
-var mysql = require('mysql')
 var app = express()
+var Connection = require('./connect')
 
 app.use( express.json() )
+
 
 app.get('/', function (req, res) {
     let data = {
@@ -14,7 +14,10 @@ app.get('/', function (req, res) {
  })
 
  app.post('/', function(req, res){
-    res.send(req.body)
+    let conn = new Connection()
+    let result = conn.getPokemons()
+    console.log(result)
+    res.send(result)
  })
  
  var server = app.listen(8081, function () {
