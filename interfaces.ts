@@ -26,4 +26,4 @@ let newGame = {
     publisher: 'Atlus',
 }
 
-console.log(showGame(newGame));
+console.table(showGame(newGame));

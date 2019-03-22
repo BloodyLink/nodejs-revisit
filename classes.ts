@@ -11,11 +11,12 @@ class Pokemon {
     }
 
     show(): void{
-        console.log(`
-            Name: ${this.name}
-            Type: ${this.type}
-            Moves: ${this.moves} 
-        `);
+        let data = {
+            "name": this.name,
+            "type": this.type,
+            "moves": this.moves
+        }
+        console.table(data);
     }
 }
 
